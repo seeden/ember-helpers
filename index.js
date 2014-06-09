@@ -38,7 +38,6 @@
 		}
 	};
 
-
 	//AMD
 	if (typeof define !== 'undefined' && define.amd) {
 		define(['ember'], function(Ember) {
@@ -55,5 +54,5 @@
 	else {
 		prepare(root.Ember);
 	}
-
+	
 } (this));
