@@ -30,7 +30,7 @@
 				var retVar = original.apply(this, args);
 
 				if(typeof retVar !== 'undefined') {
-					if(retVar.then) {
+					if(typeof retVar.then === 'function') {
 						retVar.then(end, end);
 					} else {
 						end();
