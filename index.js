@@ -29,7 +29,7 @@
 				//call original fn
 				var retVar = original.apply(this, args);
 
-				if(retVar) {
+				if(typeof retVar !== 'undefined') {
 					if(retVar.then) {
 						retVar.then(end, end);
 					} else {
