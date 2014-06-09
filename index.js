@@ -27,7 +27,15 @@
 				args.unshift(end);
 
 				//call original fn
-				original.apply(this, args);
+				var retVar = original.apply(this, args);
+
+				if(retVar) {
+					if(retVar.then) {
+						retVar.then(end, end);
+					} else {
+						end();
+					}
+				}
 			};
 		};
 
